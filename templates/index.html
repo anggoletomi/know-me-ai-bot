@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        {% for message in chat_history %}
+            <div class="chat-bubble {{ 'user-message' if message.role == 'user' else 'assistant-message' }}">
+                {{ message.content }}
+            </div>
+        {% else %}
+            <p class="no-messages">Hi, I'm Anggo's Personal Bot Assistant. I can answer and help you with any questions related to Anggo's general background and skills. Let's talk!</p>
+        {% endfor %}
+    </div>
+
+    <div class="message-input-container">
+        <form action="/" method="POST" class="message-form">
+            <input
+                type="text"
+                name="message"
+                class="message-input"
+                placeholder="Message My Assistant"
+                autocomplete="off"
+            />
+            <button type="submit" class="send-button">Send</button>
+            <button type="button" class="reset-button" onclick="resetChat()">Reset</button>
+        </form>
+    </div>
+
+    <script>
+        function scrollToBottom() {
+            const chatContainer = document.querySelector(".chat-container");
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    
+        function resetChat() {
+            // Select the chat container
+            const chatContainer = document.querySelector(".chat-container");
+
+            // Clear all chat bubbles on the frontend and add the no-messages element
+            chatContainer.innerHTML = '<p class="no-messages">Hi, I\'m Anggo\'s Personal Bot Assistant. I can answer and help you with any questions related to Anggo\'s general background and skills. Let\'s talk!</p>';
+
+            // Send a reset request to the backend
+            fetch('/reset-chat', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Chat history successfully reset on the server.');
+                    } else {
+                        console.error('Failed to reset chat history on the server.');
+                    }
+                })
+                .catch(error => console.error('Error resetting chat:', error));
+        }
+    
+        // Call scrollToBottom on page load
+        window.onload = scrollToBottom;
+    
+        // Call scrollToBottom when the form is submitted
+        document.querySelector(".message-form").addEventListener("submit", function () {
+            setTimeout(scrollToBottom, 100); // Add slight delay to ensure the new message is rendered
+        });
+    </script>
+       
+</body>
+</html>

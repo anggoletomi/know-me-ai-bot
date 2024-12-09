@@ -131,6 +131,7 @@ dmypy.json
 
 # Custom
 scripts/config.py
+original/
 
 config/config.yml
 config/config.env

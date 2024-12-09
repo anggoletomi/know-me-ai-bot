@@ -22,6 +22,9 @@ def create_context():
     if 'OWNER_NICK_NAME' in globals() and OWNER_NICK_NAME:
         context += f"{OWNER_FULL_NAME} is also known by {OWNER_NICK_NAME} as the nickname. "
 
+    if 'OWNER_SUMMARY' in globals() and OWNER_SUMMARY:
+        context += f"You need to remember key information about {OWNER_FULL_NAME} or {OWNER_NICK_NAME}, here is the summary : {OWNER_SUMMARY}. "
+
     if 'OWNER_BIO' in globals() and OWNER_BIO:
         context += f"{OWNER_BIO}. "
 

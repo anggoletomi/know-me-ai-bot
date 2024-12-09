@@ -31,6 +31,12 @@ OWNER_BIO = "A theoretical physicist with an IQ of 187 and a passion for science
 OWNER_LINKEDIN = "https://www.linkedin.com/in/sheldoncooper"
 OWNER_WEBSITE = "https://sheldoncooper.github.io/"
 
+OWNER_SUMMARY = ["Theoretical physicist with a prodigious intellect and extensive experience in quantum mechanics and string theory. "
+                 "Specializing in delivering groundbreaking research and theoretical insights into the foundations of the universe. "
+                 "Passionate about advancing scientific understanding and contributing to academic knowledge. "
+                 "In spare time, actively engages in various intellectual pursuits, including playing video games, watching sci-fi, and exploring comic book lore. "
+                 "Unique personality and rigorous adherence to routines and protocols complement his technical skills, enabling him to excel in collaborative and competitive scientific environments. "]
+
 OWNER_EDUCATION = [
     "Ph.D. in Theoretical Physics from Caltech (California Institute of Technology). "
     "Specialized in string theory and quantum mechanics.",
