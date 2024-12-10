@@ -195,6 +195,7 @@ def chat():
 @app.route("/", methods=["GET", "POST"])
 def index():
     global chat_history
+    person_name = OWNER_NICK_NAME if OWNER_NICK_NAME else OWNER_FULL_NAME if OWNER_FULL_NAME else "My"
 
     # If POST request (user sent a message)
     if request.method == "POST":
@@ -210,7 +211,7 @@ def index():
                 # Do not append assistant response here; it's already handled in generate_response.
 
     # Render the chat history and the input box
-    return render_template("index.html", chat_history=chat_history)
+    return render_template("index.html", chat_history=chat_history, name=person_name)
 
 @app.route("/reset-chat", methods=["POST"])
 def reset_chat():

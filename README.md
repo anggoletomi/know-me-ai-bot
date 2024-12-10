@@ -23,16 +23,8 @@ Follow these steps to get started:
      - `OPENAI_MODEL`: Specify the OpenAI model you want to use (e.g., `gpt-3.5-turbo`).
 
 2. **Set up the `config.py` file**:
-   - Navigate to the `scripts/` directory and copy or rename `config_template.py` to `config.py`:
-     - **On Linux/Mac**:
-       ```bash
-       cp scripts/config_template.py scripts/config.py
-       ```
-     - **On Windows**:
-       ```cmd
-       copy scripts\config_template.py scripts\config.py
-       ```
-   - Open `config.py` and fill in your public personal information (e.g., name, skills, bio).
+   - Navigate to the `scripts/` directory
+   - Open `config.py` and change current value to your public personal information (e.g., name, skills, bio).
 
 3. **Install the requirements**:
    - Run the following command:
@@ -53,9 +45,7 @@ Follow these steps to get started:
      ```
 ---
 
-## Note
-
-### 1. About `config.py`
+## About `config.py`
 
 The `config.py` file is used to define personal details for the chatbot. This project uses a file-based configuration for simplicity.
 
@@ -69,7 +59,4 @@ The `config.py` file is used to define personal details for the chatbot. This pr
 
 This approach demonstrates the flexibility of using the right tool for the right task.
 
-**Security**
-
-- The `config.py` file is included in `.gitignore`, so your personal details will not be committed to the repository, ensuring privacy and security.
-- Since no database is utilized and no chat memory service feature has been added, the chat will have no history and no user interactions will be recorded.
+*) *Since no database is utilized and no chat memory service feature has been added, the chat will have no history and no user interactions will be recorded.*

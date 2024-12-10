@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App</title>
+    <title>{{ name }} Chat App Project</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <div id="bot-name" data-name="{{ name }}"></div>
+
     <div class="chat-container">
         {% for message in chat_history %}
             <div class="chat-bubble {{ 'user-message' if message.role == 'user' else 'assistant-message' }}">
                 {{ message.content }}
             </div>
         {% else %}
-            <p class="no-messages">Hi, I'm Anggo's Personal Bot Assistant. I can answer and help you with any questions related to Anggo's general background and skills. Let's talk!</p>
+            <p class="no-messages">Hi, I'm {{ name }}'s Personal Bot Assistant. I can answer and help you with any questions related to {{ name }}'s general background and skills. Let's talk!</p>
         {% endfor %}
     </div>
 
@@ -38,11 +40,14 @@
         }
     
         function resetChat() {
+            // Get the bot name from the hidden div
+            const botName = document.getElementById("bot-name").getAttribute("data-name");
+
             // Select the chat container
             const chatContainer = document.querySelector(".chat-container");
-
+            
             // Clear all chat bubbles on the frontend and add the no-messages element
-            chatContainer.innerHTML = '<p class="no-messages">Hi, I\'m Anggo\'s Personal Bot Assistant. I can answer and help you with any questions related to Anggo\'s general background and skills. Let\'s talk!</p>';
+            chatContainer.innerHTML = `<p class="no-messages">Hi, I'm ${botName}'s Personal Bot Assistant. I can answer and help you with any questions related to ${botName}'s general background and skills. Let's talk!</p>`;
 
             // Send a reset request to the backend
             fetch('/reset-chat', { method: 'POST' })
