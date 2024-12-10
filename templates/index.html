@@ -21,7 +21,8 @@
     </div>
 
     <div class="message-input-container">
-        <form action="/" method="POST" class="message-form">
+        <!-- Updated form tag -->
+        <form class="message-form" onsubmit="sendMessage(event)">
             <input
                 type="text"
                 name="message"
@@ -41,16 +42,11 @@
         }
     
         function resetChat() {
-            // Get the bot name from the hidden div
             const botName = document.getElementById("bot-name").getAttribute("data-name");
-
-            // Select the chat container
             const chatContainer = document.querySelector(".chat-container");
-            
-            // Clear all chat bubbles on the frontend and add the no-messages element
+
             chatContainer.innerHTML = `<p class="no-messages">Hi, I'm ${botName}'s Personal Bot Assistant. I can answer and help you with any questions related to ${botName}'s general background and skills. Let's talk!</p>`;
 
-            // Send a reset request to the backend
             fetch('/reset-chat', { method: 'POST' })
                 .then(response => {
                     if (response.ok) {
@@ -61,15 +57,76 @@
                 })
                 .catch(error => console.error('Error resetting chat:', error));
         }
-    
-        // Call scrollToBottom on page load
+
+        function sendMessage(event) {
+            event.preventDefault(); // Prevent page reload
+
+            const messageInput = document.querySelector(".message-input");
+            const userMessage = messageInput.value.trim();
+            if (!userMessage) return;
+
+            // Clear the input field immediately
+            messageInput.value = "";
+
+            const chatContainer = document.querySelector(".chat-container");
+
+            // Add the user's message to the chat container
+            const userBubble = document.createElement("div");
+            userBubble.className = "chat-bubble user-message";
+            userBubble.textContent = userMessage;
+            chatContainer.appendChild(userBubble);
+
+            scrollToBottom();
+
+            // Add a typing indicator for the assistant
+            const typingBubble = document.createElement("div");
+            typingBubble.className = "chat-bubble assistant-message typing-indicator";
+            typingBubble.innerHTML = `
+                <span></span>
+                <span></span>
+                <span></span>
+            `;
+            chatContainer.appendChild(typingBubble);
+
+            scrollToBottom();
+
+            // Send the user's message to the backend
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove the typing indicator
+                chatContainer.removeChild(typingBubble);
+
+                // Add the assistant's response to the chat container
+                const assistantMessage = data.chat_history[data.chat_history.length - 1];
+                const assistantBubble = document.createElement("div");
+                assistantBubble.className = "chat-bubble assistant-message";
+                assistantBubble.textContent = assistantMessage.content;
+                chatContainer.appendChild(assistantBubble);
+
+                scrollToBottom();
+            })
+            .catch(error => {
+                console.error("Error sending message:", error);
+
+                // Remove the typing indicator on error
+                chatContainer.removeChild(typingBubble);
+
+                // Optionally show an error message
+                const errorBubble = document.createElement("div");
+                errorBubble.className = "chat-bubble assistant-message";
+                errorBubble.textContent = "Sorry, there was an error. Please try again.";
+                chatContainer.appendChild(errorBubble);
+
+                scrollToBottom();
+            });
+        }
+
         window.onload = scrollToBottom;
-    
-        // Call scrollToBottom when the form is submitted
-        document.querySelector(".message-form").addEventListener("submit", function () {
-            setTimeout(scrollToBottom, 100); // Add slight delay to ensure the new message is rendered
-        });
     </script>
-       
 </body>
 </html>

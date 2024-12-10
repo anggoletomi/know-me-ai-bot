@@ -96,3 +96,64 @@ OWNER_LANGUAGES = ["Indonesian", "English"]
 # Add as many variables as you want to make the assistant more personalized!
 
 OWNER_HOBBIES = ["Traveling","Swimming"]
+
+OWNER_CAREER_GOALS = ["Interested in leading a data team within 3-5 years"]
+
+OWNER_DESIRED_ROLE = ["Data Analytst", "Business Intelligence"]
+
+OWNER_DESIRED_INDUSTRIES = ["E-commerce", "Technology", "Cryptocurrency", "Financial"]
+
+OWNER_AVAILABILITY = "Available to start after a 1-month notice period"
+
+OWNER_WORK_AUTHORIZATION = "Authorized to work in Indonesia, open to global remote opportunities"
+
+OWNER_RELOCATION = "Open to relocating within Southeast Asia region"
+
+OWNER_REMOTE_PREFERENCE = "Open to hybrid or fully remote roles"
+
+OWNER_COMPENSATION_EXPECTATION = "Competitive with market standards, open to negotiation based on role and responsibilities"
+
+OWNER_WORK_STYLE = "Analytical, detail-oriented, and collaborative, with a focus on delivering actionable insights"
+
+OWNER_CORE_VALUES = ["Continuous Learning", "Integrity", "Customer-Centricity", "Innovation"]
+
+OWNER_GITHUB = "https://github.com/anggoletomi"
+
+OWNER_BENEFITS_IMPORTANCE = ["health coverage", "professional development budget", "flexible hours", "laptop budget support", "work remotely"]
+
+OWNER_LEADERSHIP_STYLE = "Lead by example, encourage open communication, and foster a culture of continuous improvement."
+
+OWNER_PROBLEM_SOLVING_APPROACH = "Understand context, break down problems, collaborate with stakeholders, iteratively refine solutions."
+
+OWNER_INDUSTRY_EXPOSURE = ["E-commerce", "Retail", "Logistics", "Financial"]
+
+OWNER_COMMUNICATION_STYLE = "Convey technical details in relatable stories and visuals, adjusting language based on the audience."
+
+OWNER_TEAM_CULTURE_FIT = "Enjoys diverse, collaborative, and continuous-learning teams that value innovation."
+
+OWNER_CONTRACT_TYPE_PREFERENCE = "Permanent."
+
+OWNER_FULLTIME_PARTTIME = 'Full Time.'
+
+OWNER_EMPLOYER_VALUES = ["Innovation", "Professional Growth", "Ethical Conduct", "Diversity & Inclusion"]
+
+OWNER_HR_QUESTIONS_AND_ANSWER = [
+    "What are your strengths and weaknesses?|Strengths: Strong analytical skills, proficiency in BI tools, and a detail-oriented approach to problem-solving. Weaknesses: Limited experience in backend development, but I am actively learning and improving in this area.",
+    "Why do you want to work here?|I want to work here because your company's focus aligns with my passion for leveraging data to drive insights and improve decision-making processes. I also value a collaborative and innovative work culture.",
+    "What motivates you in your career?|I am motivated by solving complex problems, learning new skills, and creating impactful solutions that simplify decision-making for businesses.",
+    "How do you handle stress or pressure at work?|I manage stress by breaking tasks into smaller steps, prioritizing effectively, and maintaining open communication with my team to ensure alignment.",
+    "Can you describe a challenging situation you faced at work and how you handled it?|I struggled with isolation while working in a team spread across different time zones. To address this, I initiated regular updates and used collaboration tools to stay connected and ensure project alignment.",
+    "What accomplishments are you most proud of?|Successfully automating recurring reports, reducing manual effort by 50%, and creating dashboards that enabled real-time decision-making for stakeholders.",
+    "Why are you leaving (or why did you leave) your current/previous job?|I left because I felt limited in opportunities for growth and lacked alignment with the work environment. I am seeking a fully remote role to focus on productivity and collaboration.",
+    "What have you learned from your past mistakes at work?|I learned the importance of seeking clarity and aligning expectations early to avoid miscommunication and inefficiencies.",
+    "Can you give an example of a time you demonstrated leadership?|I led a project to design and implement an automated reporting system, coordinating across teams and ensuring its timely delivery.",
+    "How do you handle conflict in a team setting?|I address conflict by listening to all perspectives, identifying the root cause, and finding a solution that benefits the team as a whole.",
+    "Describe a time when you worked with a difficult colleague and how you managed it.|I worked with a colleague who was resistant to adopting a new tool. I addressed this by demonstrating the tool's benefits and providing hands-on support to ease the transition.",
+    "How do you ensure effective communication in a team?|I ensure effective communication by setting clear expectations, using collaboration tools, and scheduling regular check-ins to stay aligned.",
+    "What role do you usually take in a team?|I usually take on the role of a data strategist or problem-solver, ensuring tasks are completed efficiently and with high quality.",
+    "What do you know about our company and its culture?|I know your company values innovation, collaboration, and data-driven decision-making, which aligns with my career goals and values.",
+    "How do your skills and experience align with the requirements of this role?|My skills in BI tools, data visualization, and automation align closely with this role, along with my ability to adapt and learn quickly in new environments.",
+    "Where do you see yourself in five years?|I see myself as a senior data analyst or BI consultant, contributing to impactful projects and mentoring others in the field.",
+    "What are your salary expectations?|My expectation is competitive with market standards for this role and level of expertise, and I am open to negotiation.",
+    "Are you open to travel if the job requires it?|I am open to occasional travel if necessary."
+]

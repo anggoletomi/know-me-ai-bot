@@ -87,19 +87,36 @@ def handle_rate_limit_exceeded(e):
 # Define Function Relevant Question Asked
 def is_relevant_question(client, user_input):
     relevance_check_prompt = (
-        f"Does the following question directly relate to {OWNER_NICK_NAME}'s personal or professional details? "
-        f"Question: '{user_input}'. "
-        "Answer with a single word: 'Yes' or 'No'."
+        f"Determine if the following question is related to {OWNER_NICK_NAME}'s personal or professional details.\n\n"
+
+        "A question is considered 'relevant' if it asks about this individual's background, skills, experience, work style, "
+        "professional history, personal attributes, or anything specifically tied to their identity.\n\n"
+
+        "Even if the individual's name is not mentioned directly, consider the question relevant if it clearly refers to a person "
+        "(e.g., using 'he', 'she', 'they') and is asking about qualities or aspects of that individual.\n\n"
+
+        "If the question is about unrelated topics, such as weather, geography, general trivia, or anything not tied to the individual's details, "
+        "it should be considered 'not relevant'.\n\n"
+
+        "Here are some examples:\n"
+        f"Q: 'What is {OWNER_NICK_NAME}'s background?' A: Yes\n"
+        "Q: 'Is he good at Python?' A: Yes (assuming 'he' refers to the individual)\n"
+        "Q: 'How long does she work?' A: Yes (assuming 'she' refers to the individual)\n"
+        "Q: 'What's the weather like?' A: No\n"
+        "Q: 'What is the capital of France?' A: No\n\n"
+
+        f"Question: '{user_input}'\n\n"
+        "Respond with 'Yes' or 'No'. Do not include punctuation, explanations, or additional words."
     )
 
     try:
         response = client.chat.completions.create(
             model=OPENAI_MODEL,
             messages=[
-                {"role": "system", "content": "You are a classifier that determines if questions are relevant to a specific person's information."},
+                {"role": "system", "content": "You are a strict classifier that MUST only respond with 'Yes' or 'No'. Do not add punctuation or explanations."},
                 {"role": "user", "content": relevance_check_prompt}
             ],
-            max_tokens=5,
+            max_tokens=1,
             temperature=0
         )
 
@@ -127,13 +144,17 @@ def generate_response(user_input):
         session["chat_history"] = []  # Initialize chat history for the session
     chat_history = session["chat_history"]
 
+    # Add logging to track user input
+    print(f"[DEBUG] User Input: {user_input}")
+    print(f"[DEBUG] Chat History (Before Processing): {chat_history}")
+
     # Token Count Restriction Logic
     tokenizer = get_tokenizer()
     token_count = len(tokenizer.encode(user_input))
     if token_count > MAX_INPUT_TOKEN:
         # Generate a token limit error response
         token_limit_response = f"Your input exceeds the token limit of {MAX_INPUT_TOKEN}. Please shorten your message."
-        print("Token Limit Exceeded:", token_limit_response)
+        print("[DEBUG] Token Limit Exceeded. Response:", token_limit_response)
 
         # Add the token limit response to chat history
         chat_history.append({"role": "assistant", "content": token_limit_response})
@@ -143,7 +164,10 @@ def generate_response(user_input):
     # Check if the question is relevant
     if not is_relevant_question(client, user_input):
         fallback_response = f"This is unrelated. Please ask questions relevant to {OWNER_NICK_NAME}'s information."
-        print("Fallback Response Triggered:", fallback_response)
+
+        # Log fallback response
+        print("[DEBUG] Fallback Response Triggered:", fallback_response)
+        print("[DEBUG] Chat History (Before Fallback Added):", chat_history)
 
         # Add the fallback response to chat history
         chat_history.append({"role": "assistant", "content": fallback_response})
@@ -154,6 +178,9 @@ def generate_response(user_input):
     if not chat_history or chat_history[-1] != {"role": "user", "content": user_input}:
         chat_history.append({"role": "user", "content": user_input})
         session["chat_history"] = chat_history
+
+    # Log chat history after user input is added
+    print("[DEBUG] Chat History (After Adding User Input):", chat_history)
 
     # Keep only the last N interactions
     if len(chat_history) > BUFFER_SIZE:
@@ -176,6 +203,9 @@ def generate_response(user_input):
 
         assistant_response = response.choices[0].message.content.strip()
 
+        # Log assistant response
+        print("[DEBUG] Assistant Response:", assistant_response)
+
         # Add the assistant's response if not already added
         if not chat_history or chat_history[-1] != {"role": "assistant", "content": assistant_response}:
             chat_history.append({"role": "assistant", "content": assistant_response})
@@ -183,17 +213,16 @@ def generate_response(user_input):
 
         return assistant_response
     except openai.OpenAIError as e:
-        print(f"OpenAI API error: {str(e)}")
+        print("[ERROR] OpenAI API error:", str(e))
         return "The assistant is currently unavailable. Please try again later."
     except Exception as e:
-        print(f"Unexpected error: {str(e)}")
+        print("[ERROR] Unexpected error:", str(e))
         return "An unexpected error occurred. Please try again later."
 
 # Define Flask route
 @app.route("/chat", methods=["POST"])
 @limiter.limit(f"{NUMBER_OF_QUESTION} per {PER_TIME_WINDOW}", error_message=f"You have exceeded the limit of {NUMBER_OF_QUESTION} questions per {PER_TIME_WINDOW}.")
 def chat():
-    
     user_input = request.json.get("message", "")
     logging.info(f"Received input: {user_input}")
 
@@ -201,8 +230,14 @@ def chat():
         return jsonify({"error": "Message is required"}), 400
 
     response = generate_response(user_input)
+    
+    # Log the updated session chat history after generating a response
+    print("[DEBUG] Session Chat History (After Response):", session["chat_history"])
+    
     session.modified = True  # Ensure session updates are saved
-    return jsonify({"response": response})
+
+    # Return the full chat history
+    return jsonify({"chat_history": session["chat_history"]})
 
 # Route for the user interface
 @app.route("/", methods=["GET", "POST"])

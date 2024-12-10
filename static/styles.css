@@ -115,3 +115,50 @@ body {
     color: #8888a0;
     text-align: center;
 }
+
+.typing-indicator {
+    align-self: flex-start; /* Aligns the typing bubble like the assistant's message */
+    background-color: transparent; /* Matches the assistant bubble background */
+    color: #ffffff; /* Matches the assistant's text color */
+    margin-left: 320px; /* Matches the assistant's bubble position */
+    margin-right: auto; /* Ensures alignment consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 15px;
+    gap: 3px; /* Ensures consistent spacing between dots */
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff; /* Matches assistant bubble text color */
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+}
