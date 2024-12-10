@@ -8,32 +8,49 @@ A customizable AI chatbot that represents your personal details, skills, and exp
 
 Follow these steps to get started:
 
-1. **Setup the `.env` File**:
+1. **Set up the `.env` file**:
    - Copy or rename the `env.template` file to `.env`:
-     - On Linux/Mac:
+     - **On Linux/Mac**:
        ```bash
        cp .env.template .env
        ```
-     - On Windows:
+     - **On Windows**:
        ```cmd
        copy .env.template .env
        ```
    - Update the following fields in `.env`:
-     - `OPENAI_APIKEY`: Add your OpenAI API key here.
-     - `OPENAI_MODEL`: Specify the OpenAI model you want to use (example: `gpt-3.5-turbo`).
+     - `OPENAI_APIKEY`: Add your OpenAI API key.
+     - `OPENAI_MODEL`: Specify the OpenAI model you want to use (e.g., `gpt-3.5-turbo`).
 
-2. **Setup the `config.py` File**:
+2. **Set up the `config.py` file**:
    - Navigate to the `scripts/` directory and copy or rename `config_template.py` to `config.py`:
-     - On Linux/Mac:
+     - **On Linux/Mac**:
        ```bash
        cp scripts/config_template.py scripts/config.py
        ```
-     - On Windows:
+     - **On Windows**:
        ```cmd
        copy scripts\config_template.py scripts\config.py
        ```
-   - Open `config.py` and fill in your personal information (example: name, skills, bio, etc.) based on your requirements.
+   - Open `config.py` and fill in your public personal information (e.g., name, skills, bio).
 
+3. **Install the requirements**:
+   - Run the following command:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Run the main script**:
+   - Navigate to the `scripts/` directory and execute the main script:
+     ```bash
+     python config.py
+     ```
+
+5. **Check local development**:
+   - Open your web browser and go to:
+     ```
+     http://127.0.0.1:5000
+     ```
 ---
 
 ## Note
