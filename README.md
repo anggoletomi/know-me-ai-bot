@@ -8,18 +8,26 @@ A customizable AI chatbot that represents your personal details, skills, and exp
 
 Follow these steps to get started:
 
-1. **Set up the `.env` file**:
-   - Copy or rename the `env.template` file to `.env`:
-     - **On Linux/Mac**:
-       ```bash
-       cp .env.template .env
-       ```
-     - **On Windows**:
-       ```cmd
-       copy .env.template .env
-       ```
-   - Update the following fields in `.env`:
-     - `OPENAI_APIKEY`: Add your OpenAI API key.
+1. **Set up the `.env` file**
+- Copy or rename the `env.template` file to `.env`:
+  - **On Linux/Mac**:
+    ```bash
+    cp .env.template .env
+    ```
+  - **On Windows**:
+    ```cmd
+    copy .env.template .env
+    ```
+
+- Update the following fields in `.env`:
+  - **`OPENAI_APIKEY`**: Add your OpenAI API key.
+  - **`FLASK_SECRET_KEY`**: Add a generated Flask secret key. You can generate one using Python:
+    ```python
+    import secrets
+    print(secrets.token_hex(32))
+    ```
+
+> **Note**: If you don't want to generate a key, the app provides a default fallback for demonstration purposes. However, it is recommended to set your own `FLASK_SECRET_KEY` for better security.
 
 2. **Set up the `config.py` file**:
    - Open `config.py` and change current value to your public personal information (e.g., name, skills, bio).

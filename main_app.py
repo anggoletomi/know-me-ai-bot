@@ -14,7 +14,7 @@ Endpoints:
 import logging
 logging.basicConfig(level=logging.INFO)
 
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, session
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_limiter.errors import RateLimitExceeded
@@ -22,6 +22,8 @@ from flask_limiter.errors import RateLimitExceeded
 import openai
 import os
 import tiktoken
+
+from datetime import timedelta
 
 from context_init import create_context
 from config import *
@@ -34,6 +36,10 @@ app = Flask(
     template_folder=os.path.join(os.path.dirname(__file__), "templates"),
     static_folder=os.path.join(os.path.dirname(__file__), "static")
 )
+
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "myportfolio123")
+
+app.permanent_session_lifetime = timedelta(minutes=30)
 
 # API KEY & Model
 OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
@@ -54,7 +60,6 @@ def get_tokenizer():
     return tiktoken.encoding_for_model(OPENAI_MODEL)
 
 # Chat History Buffer
-chat_history = []  # Stores recent user-bot interactions
 BUFFER_SIZE = 10  # Maximum number of exchanges to keep
 
 # Define Error Handler
@@ -116,7 +121,10 @@ def is_relevant_question(client, user_input):
 context = create_context()
 
 def generate_response(user_input):
-    global chat_history
+
+    if "chat_history" not in session:
+        session["chat_history"] = []  # Initialize chat history for the session
+    chat_history = session["chat_history"]
 
     # Token Count Restriction Logic
     tokenizer = get_tokenizer()
@@ -128,6 +136,7 @@ def generate_response(user_input):
 
         # Add the token limit response to chat history
         chat_history.append({"role": "assistant", "content": token_limit_response})
+        session["chat_history"] = chat_history
         return token_limit_response
 
     # Check if the question is relevant
@@ -137,11 +146,13 @@ def generate_response(user_input):
 
         # Add the fallback response to chat history
         chat_history.append({"role": "assistant", "content": fallback_response})
+        session["chat_history"] = chat_history
         return fallback_response
 
     # Add user input to chat history if not already added
     if not chat_history or chat_history[-1] != {"role": "user", "content": user_input}:
         chat_history.append({"role": "user", "content": user_input})
+        session["chat_history"] = chat_history
 
     # Keep only the last N interactions
     if len(chat_history) > BUFFER_SIZE:
@@ -167,6 +178,7 @@ def generate_response(user_input):
         # Add the assistant's response if not already added
         if not chat_history or chat_history[-1] != {"role": "assistant", "content": assistant_response}:
             chat_history.append({"role": "assistant", "content": assistant_response})
+            session["chat_history"] = chat_history
 
         return assistant_response
     except openai.OpenAIError as e:
@@ -188,12 +200,16 @@ def chat():
         return jsonify({"error": "Message is required"}), 400
 
     response = generate_response(user_input)
+    session.modified = True  # Ensure session updates are saved
     return jsonify({"response": response})
 
 # Route for the user interface
 @app.route("/", methods=["GET", "POST"])
 def index():
-    global chat_history
+    if "chat_history" not in session:
+        session["chat_history"] = []  # Initialize chat history for the session
+    chat_history = session["chat_history"]
+
     person_name = OWNER_NICK_NAME if OWNER_NICK_NAME else OWNER_FULL_NAME if OWNER_FULL_NAME else "My"
 
     # If POST request (user sent a message)
@@ -204,6 +220,7 @@ def index():
             if len(chat_history) == 0 or chat_history[-1] != {"role": "user", "content": user_message}:
                 # Add user's message to the chat history
                 chat_history.append({"role": "user", "content": user_message})
+                session["chat_history"] = chat_history
 
                 # Generate assistant's response
                 assistant_response = generate_response(user_message)
@@ -214,8 +231,9 @@ def index():
 
 @app.route("/reset-chat", methods=["POST"])
 def reset_chat():
-    global chat_history
-    chat_history = []  # Clear the chat history
+    session["chat_history"] = []
+    session.modified = True
+
     logging.info("Chat history has been reset.")
     return jsonify({"message": "Chat history reset successfully."}), 200
 
