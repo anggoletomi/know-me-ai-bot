@@ -117,24 +117,24 @@ body {
 }
 
 .typing-indicator {
-    align-self: flex-start; /* Aligns the typing bubble like the assistant's message */
-    background-color: transparent; /* Matches the assistant bubble background */
-    color: #ffffff; /* Matches the assistant's text color */
-    margin-left: 320px; /* Matches the assistant's bubble position */
-    margin-right: auto; /* Ensures alignment consistency */
+    align-self: flex-start;
+    background-color: transparent;
+    color: #ffffff;
+    margin-left: 320px;
+    margin-right: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     width: fit-content;
     padding: 10px 15px;
     border-radius: 15px;
-    gap: 3px; /* Ensures consistent spacing between dots */
+    gap: 3px;
 }
 
 .typing-indicator span {
     width: 8px;
     height: 8px;
-    background-color: #ffffff; /* Matches assistant bubble text color */
+    background-color: #ffffff;
     border-radius: 50%;
     display: inline-block;
     animation: typing 1.5s infinite;
@@ -163,8 +163,8 @@ body {
     }
 }
 
+/* Mobile layout */
 @media (max-width: 600px) {
-    /* Chat bubbles: Remove the large fixed margins and allow them to be more fluid */
     .user-message {
         margin-right: auto;
         margin-left: auto;
@@ -177,13 +177,11 @@ body {
         max-width: 90%;
     }
 
-    /* Optional: Increase font size for better readability on small screens */
     .chat-bubble {
         font-size: 16px;
-        text-align: left; /* optional if you prefer left alignment on mobile */
+        text-align: left;
     }
 
-    /* Make the input and buttons stack nicely */
     .message-input-container {
         flex-direction: column;
         align-items: stretch;
