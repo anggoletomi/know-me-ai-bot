@@ -162,3 +162,41 @@ body {
         opacity: 0.5;
     }
 }
+
+@media (max-width: 600px) {
+    /* Chat bubbles: Remove the large fixed margins and allow them to be more fluid */
+    .user-message {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 90%;
+    }
+
+    .assistant-message {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+    }
+
+    /* Optional: Increase font size for better readability on small screens */
+    .chat-bubble {
+        font-size: 16px;
+        text-align: left; /* optional if you prefer left alignment on mobile */
+    }
+
+    /* Make the input and buttons stack nicely */
+    .message-input-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .message-input {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .send-button, .reset-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
