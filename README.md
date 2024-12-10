@@ -20,7 +20,6 @@ Follow these steps to get started:
        ```
    - Update the following fields in `.env`:
      - `OPENAI_APIKEY`: Add your OpenAI API key.
-     - `OPENAI_MODEL`: Specify the OpenAI model you want to use (e.g., `gpt-3.5-turbo`).
 
 2. **Set up the `config.py` file**:
    - Open `config.py` and change current value to your public personal information (e.g., name, skills, bio).

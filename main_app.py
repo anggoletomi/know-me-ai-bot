@@ -37,9 +37,8 @@ app = Flask(
 
 # API KEY & Model
 OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL")
 if not OPENAI_APIKEY or not OPENAI_MODEL:
-    raise EnvironmentError("OPENAI_APIKEY and OPENAI_MODEL must be set in the environment.")
+    raise EnvironmentError("OPENAI_APIKEY and OPENAI_MODEL must be set.")
 
 # Client & Limiter
 client = openai.OpenAI(api_key=OPENAI_APIKEY)
@@ -89,7 +88,7 @@ def is_relevant_question(client, user_input):
 
     try:
         response = client.chat.completions.create(
-            model=os.getenv("OPENAI_MODEL"),
+            model=OPENAI_MODEL,
             messages=[
                 {"role": "system", "content": "You are a classifier that determines if questions are relevant to a specific person's information."},
                 {"role": "user", "content": relevance_check_prompt}

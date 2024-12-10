@@ -1,4 +1,8 @@
-# PART 1 - RESTRICTION CONFIGURATION
+# PART 1 - Define the model
+
+OPENAI_MODEL="gpt-3.5-turbo"
+
+# PART 2 - RESTRICTION CONFIGURATION
 # Update the values below based on your needs
 
 MAX_INPUT_TOKEN = 200 # Limit user input size
@@ -6,7 +10,7 @@ MAX_OUTPUT_TOKEN = 800 # Limit bot output size
 NUMBER_OF_QUESTION = 20 # maximum number of question asked by users in a time window
 PER_TIME_WINDOW = '10 minutes' # example: 'second' , '30 seconds', 'minute', '30 minutes', 'hour', '2 hours', 'day', '7 days'
 
-# PART 2 - PERSONAL CONFIGURATION
+# PART 3 - PERSONAL CONFIGURATION
 # Update the values below with your personal details
 
 # Default Assistant Prompt
