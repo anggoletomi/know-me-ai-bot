@@ -8,7 +8,7 @@ A customizable AI chatbot that represents your personal details, skills, and exp
 
 Follow these steps to get started:
 
-1. **Set up the `.env` file**
+**1. Set up the `.env` file**
 - Copy or rename the `env.template` file to `.env`:
   - **On Linux/Mac**:
     ```bash
@@ -29,26 +29,43 @@ Follow these steps to get started:
 
 > **Note**: If you don't want to generate a key, the app provides a default fallback for demonstration purposes. However, it is recommended to set your own `FLASK_SECRET_KEY` for better security.
 
-2. **Set up the `config.py` file**:
+**2. Set up the `config.py` file**:
    - Open `config.py` and change current value to your public personal information (e.g., name, skills, bio).
 
-3. **Install the requirements**:
+**3. Install the requirements**:
    - Run the following command:
      ```bash
      pip install -r requirements.txt
      ```
 
-4. **Run the main script**:
+**4. Run the main script**:
    - Navigate to the `scripts/` directory and execute the main script:
      ```bash
      python config.py
      ```
 
-5. **Check local development**:
+**5. Check local development**:
    - Open your web browser and go to:
      ```
      http://127.0.0.1:5000
      ```
+
+**6. Deployment**
+- **Using Render Free Tier**:
+  - I deployed this application using the **free tier** from [Render](https://render.com/).
+  - **Limitation**: Render free-tier services automatically spin down due to inactivity after 15 minutes. This means the server will go to sleep and will need some time to spin up again when accessed.
+
+- **Keeping the Server Alive**:
+  - To ensure the server stays available, I set up a scheduled ping using:
+    1. **`keep_alive.py`**:
+       - This script sends regular HTTP GET requests to the deployed server URL to prevent it from being marked as idle.
+
+    2. **GitHub Actions**:
+       - To automate the pinging process, I use GitHub Actions with a workflow file located at `.github/workflows/schedule-keep-alive.yml`.
+       - This workflow schedules the `keep_alive.py` script to run every 14 minutes to keep the server active.
+
+    3. Go to the **Actions** tab on GitHub to verify the workflow is running correctly.
+
 ---
 
 ## About `config.py`

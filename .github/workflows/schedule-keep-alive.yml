@@ -11,16 +11,16 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # Clones the repository into the runner
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
-      - name: List files in working directory
+      - name: Install requests library
         run: |
-          ls -la
+          pip install requests
 
       - name: Run Python script
         run: |
