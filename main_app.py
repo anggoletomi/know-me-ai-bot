@@ -43,6 +43,7 @@ app.permanent_session_lifetime = timedelta(minutes=30)
 
 # API KEY & Model
 OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL")
 if not OPENAI_APIKEY or not OPENAI_MODEL:
     raise EnvironmentError("OPENAI_APIKEY and OPENAI_MODEL must be set.")
 

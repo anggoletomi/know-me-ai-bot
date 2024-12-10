@@ -21,6 +21,7 @@ Follow these steps to get started:
 
 - Update the following fields in `.env`:
   - **`OPENAI_APIKEY`**: Add your OpenAI API key.
+  - **`OPENAI_MODEL`**: Add your OpenAI API model.
   - **`FLASK_SECRET_KEY`**: Add a generated Flask secret key. You can generate one using Python:
     ```python
     import secrets
