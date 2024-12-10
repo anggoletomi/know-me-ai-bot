@@ -2,7 +2,7 @@ name: Run Ping Script on Schedule
 
 on:
   schedule:
-    - cron: '*/14 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:        # Allows manual trigger from GitHub Actions UI
 
 jobs:
