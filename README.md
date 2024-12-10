@@ -23,7 +23,6 @@ Follow these steps to get started:
      - `OPENAI_MODEL`: Specify the OpenAI model you want to use (e.g., `gpt-3.5-turbo`).
 
 2. **Set up the `config.py` file**:
-   - Navigate to the `scripts/` directory
    - Open `config.py` and change current value to your public personal information (e.g., name, skills, bio).
 
 3. **Install the requirements**:
