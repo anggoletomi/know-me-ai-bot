@@ -1,0 +1,28 @@
+name: Run Ping Script on Schedule
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:        # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Clones the repository into the runner
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: List files in working directory
+        run: |
+          ls -la
+
+      - name: Run Python script
+        run: |
+          python keep_alive.py > script_output.log
+          cat script_output.log
