@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} Chat App Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="bot-name" data-name="{{ name }}"></div>
+
+    <div class="chat-container">
+        {% for message in chat_history %}
+            <div class="chat-bubble {{ 'user-message' if message.role == 'user' else 'assistant-message' }}">
+                {{ message.content }}
+            </div>
+        {% else %}
+            <p class="no-messages">Hi, I'm {{ name }}'s Personal Bot Assistant. I can answer and help you with any questions related to {{ name }}'s general background and skills. Let's talk!</p>
+        {% endfor %}
+    </div>
+
+    <div class="message-input-container">
+        <!-- Updated form tag -->
+        <form class="message-form" onsubmit="sendMessage(event)">
+            <input
+                type="text"
+                name="message"
+                class="message-input"
+                placeholder="Message My Assistant"
+                autocomplete="off"
+            />
+            <button type="submit" class="send-button">Send</button>
+            <button type="button" class="reset-button" onclick="resetChat()">Reset</button>
+        </form>
+    </div>
+
+    <script>
+        function scrollToBottom() {
+            const chatContainer = document.querySelector(".chat-container");
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    
+        function resetChat() {
+            const botName = document.getElementById("bot-name").getAttribute("data-name");
+            const chatContainer = document.querySelector(".chat-container");
+
+            chatContainer.innerHTML = `<p class="no-messages">Hi, I'm ${botName}'s Personal Bot Assistant. I can answer and help you with any questions related to ${botName}'s general background and skills. Let's talk!</p>`;
+
+            fetch('/reset-chat', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Chat history successfully reset on the server.');
+                    } else {
+                        console.error('Failed to reset chat history on the server.');
+                    }
+                })
+                .catch(error => console.error('Error resetting chat:', error));
+        }
+
+        function sendMessage(event) {
+            event.preventDefault(); // Prevent page reload
+
+            const messageInput = document.querySelector(".message-input");
+            const userMessage = messageInput.value.trim();
+            if (!userMessage) return;
+
+            // Clear the input field immediately
+            messageInput.value = "";
+
+            const chatContainer = document.querySelector(".chat-container");
+
+            // Add the user's message to the chat container
+            const userBubble = document.createElement("div");
+            userBubble.className = "chat-bubble user-message";
+            userBubble.textContent = userMessage;
+            chatContainer.appendChild(userBubble);
+
+            scrollToBottom();
+
+            // Add a typing indicator for the assistant
+            const typingBubble = document.createElement("div");
+            typingBubble.className = "chat-bubble assistant-message typing-indicator";
+            typingBubble.innerHTML = `
+                <span></span>
+                <span></span>
+                <span></span>
+            `;
+            chatContainer.appendChild(typingBubble);
+
+            scrollToBottom();
+
+            // Send the user's message to the backend
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove the typing indicator
+                chatContainer.removeChild(typingBubble);
+
+                // Add the assistant's response to the chat container
+                const assistantMessage = data.chat_history[data.chat_history.length - 1];
+                const assistantBubble = document.createElement("div");
+                assistantBubble.className = "chat-bubble assistant-message";
+                assistantBubble.textContent = assistantMessage.content;
+                chatContainer.appendChild(assistantBubble);
+
+                scrollToBottom();
+            })
+            .catch(error => {
+                console.error("Error sending message:", error);
+
+                // Remove the typing indicator on error
+                chatContainer.removeChild(typingBubble);
+
+                // Optionally show an error message
+                const errorBubble = document.createElement("div");
+                errorBubble.className = "chat-bubble assistant-message";
+                errorBubble.textContent = "Sorry, there was an error. Please try again.";
+                chatContainer.appendChild(errorBubble);
+
+                scrollToBottom();
+            });
+        }
+
+        window.onload = scrollToBottom;
+    </script>
+</body>
+</html>
