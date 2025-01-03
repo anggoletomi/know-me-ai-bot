@@ -40,9 +40,9 @@ Follow these steps to get started:
      ```
 
 **4. Run the main script**:
-   - Navigate to the `scripts/` directory and execute the main script:
+   - Execute the main script:
      ```bash
-     python config.py
+     python main_app.py
      ```
 
 **5. Check local development**:
@@ -55,17 +55,6 @@ Follow these steps to get started:
 - **Using Render Free Tier**:
   - I deployed this application using the **free tier** from [Render](https://render.com/).
   - **Limitation**: Render free-tier services automatically spin down due to inactivity after 15 minutes. This means the server will go to sleep and will need some time to spin up again when accessed.
-
-- **Keeping the Server Alive**:
-  - To ensure the server stays available, I set up a scheduled ping using:
-    1. **`keep_alive.py`**:
-       - This script sends regular HTTP GET requests to the deployed server URL to prevent it from being marked as idle.
-
-    2. **GitHub Actions**:
-       - To automate the pinging process, I use GitHub Actions with a workflow file located at `.github/workflows/schedule-keep-alive.yml`.
-       - This workflow schedules the `keep_alive.py` script to run every 14 minutes to keep the server active.
-
-    3. Go to the **Actions** tab on GitHub to verify the workflow is running correctly.
 
 ---
 
