@@ -23,70 +23,69 @@ OWNER_NICK_NAME = "Anggo"
 # - Strings should be enclosed in quotes " "
 # - Lists should be enclosed in square brackets [ ] with items separated by commas
 
+OWNER_TITLE = "Business Intelligence Engineer, Data Analyst, AI Explorer"
+
 OWNER_BIO = "Passionate about data, analytics, and intelligent automation"
+
+OWNER_COUNTRY = "Indonesia"
+
 OWNER_LINKEDIN = "https://www.linkedin.com/in/anggoletomi"
+
 OWNER_WEBSITE = "https://anggoletomi.github.io/"
 
-OWNER_SUMMARY = ["Business Intelligence Engineer with extensive experience in data analytics, automation, and business intelligence tools. "
-                 "Specializing in delivering impactful data visualizations and optimizing end-to-end data pipelines. "
-                 "Passionate about leveraging data to drive strategic decision-making and enhance business processes. "
-                 "In the spare time, actively explore emerging AI technologies and applications, broadening expertise in tech-driven innovation. "
-                 "unique background in sales and operations complements the technical skills, enabling to bridge the gap between data-driven insights and practical business strategies. "]
+OWNER_GITHUB = "https://github.com/anggoletomi/"
 
-OWNER_EDUCATION = [
-    "Bachelor's Degree in Industrial Engineering from Telkom University (August 2010 - June 2015). "
-    "Focused on business process engineering, system modeling, design and analysis of information systems + database. "
-    "Final Project Title: ILK Laundry Management Information System for transaction data and report using waterfall method. "
-]
+OWNER_LIVEBOT = "https://know-me-ai-bot.onrender.com/"
 
-OWNER_CERTIFICATIONS = [
-    "Data Science Certification from Rakamin Academy (August 2021 - November 2021). "
-    "Focused on data cleansing, data analysis, data visualization, and building predictive models. "
-    "Final Project Title: Credit Card Payment Default Prediction.",
-    "Data Engineer Certification from DigitalSkola (January 2022 - April 2022). "
-    "Focused on setting up, building, and managing data pipelines. "
-    "Final Project Title: ETL Pipeline API Docker Airflow."
-]
+OWNER_SUMMARY = ["I am a Business Intelligence Engineer with extensive experience in data analytics, automation, and business intelligence tools. "
+                 "Specializing in delivering impactful data visualizations and optimizing end-to-end data pipelines, I am passionate about leveraging data to drive strategic decision-making and enhance business processes. "
+                 "In my spare time, I actively explore emerging AI technologies and applications, broadening my expertise in tech-driven innovation. "
+                 "My unique background in sales and operations complements my technical skills, enabling me to bridge the gap between data-driven insights and practical business strategies. "]
+
+OWNER_SPECIALIZATION = ["Data Collection","Data Cleansing","Data Modeling","Data Visualization","Data Analytics",
+                        "ETL","ELT","Data Engineer","Business Intelligence","Workflow Automation","Statistical Analysis",
+                        "Basic Machine Learning"]
 
 OWNER_EXPERIENCE = [
     "Business Intelligence Engineer at SCI Ecommerce (December 2019 - October 2024, Jakarta, Indonesia). "
-    "1. Dashboard Development: Designed and delivered over five interactive dashboards and reports tailored for sales,marketing, supply chain, finance, and customer service teams. "
-    "Providing actionable insights for stakeholders acrossmultiple countries in the SEA region. "
-    "As part of a growing company, have demonstrated adaptability by developing dashboards using various BI visualization tools, including Looker Studio, Power BI, and FineBI. "
-    "2. Data Pipeline and ETL Optimization: Automated and optimized end-to-end data pipelines using tools such as Python,SQL, and Power Automate. "
-    "Streamlined the ETL process to efficiently process data from diverse sources, including over 100 e-commerce stores across four platforms (Tokopedia, Shopee, Lazada, and TikTok), eight WMS (Anchanto,Dilayani Tokopedia, Flash, Flux, Lazada BMS, Qianyi, Quick, and Qxpress), as well as email reports and Google Sheets. "
-    "Each source featured unique reports and table schemas that required tailored processing. "
-    "This automation replacedthe need for four dedicated personnel, reducing manual effort by approximately 330 hours per month and significantly minimizing human error. "
-    "Achieved over 98% accuracy in data processing and improved report delivery time by 47%, enabling faster and more reliable decision-making. "
-    "3. Advanced Analytics: Conducted in-depth data analysis using Python and SQL to identify key trends and provideactionable insights. "
-    "Collaborated with the sales team to deliver recommendations based on critical performancemetrics. "
-    "Created detailed inventory reports for the supply chain team, highlighting products nearing expiration,products aging in the warehouse, and products at risk of going out of stock that require prompt replenishment. "
-    "Additionally, developed near real-time daily bottom-line reports, including net profit analysis, to identify products beingsold at a loss, pinpoint expense-related pain points, and support strategic decision-making. "
-    "Analyzed in-platform adperformance metrics to evaluate spending efficiency, identify ROI, and recommend budget optimizations to maximizeoverall profitability. "
-    "4. Cross-Functional Collaboration: Partnered with teams from sales, marketing, supply chain, finance, and customerservice teams to understand business needs and ensure data solutions aligned with strategic goals.",
+    "1. Dashboard Development: Designed and delivered over five interactive dashboards and reports tailored for sales, marketing, supply chain, finance, and customer service teams, providing actionable insights for stakeholders across multiple countries in the SEA region. As part of a growing company, I have demonstrated adaptability by developing dashboards using various BI visualization tools, including Looker Studio, Power BI, and FineBI. "
+    "2. Data Pipeline and ETL Optimization: Automated and optimized end-to-end data pipelines using tools such as Python, SQL, and Power Automate. Streamlined the ETL process to efficiently process data from diverse sources, including over 100 e-commerce stores across four platforms (Tokopedia, Shopee, Lazada, and TikTok), eight WMS (Anchanto, Dilayani Tokopedia, Flash, Flux, Lazada BMS, Qianyi, Quick, and Qxpress), as well as email reports and Google Sheets. Each source featured unique reports and table schemas that required tailored processing. This automation replaced the need for four dedicated personnel, reducing manual effort by approximately 330 hours per month and significantly minimizing human error. Achieved over 98% accuracy in data processing and improved report delivery time by 47%, enabling faster and more reliable decision-making. "
+    "3. Advanced Analytics: Conducted in-depth data analysis using Python and SQL to identify key trends and provide actionable insights. Collaborated with the sales team to deliver recommendations based on critical performance metrics. Created detailed inventory reports for the supply chain team, highlighting products nearing expiration, products aging in the warehouse, and products at risk of going out of stock that require prompt replenishment. Additionally, developed near real-time daily bottom-line reports, including net profit analysis, to identify products being sold at a loss, pinpoint expense-related pain points, and support strategic decision-making. Analyzed in-platform ad performance metrics to evaluate spending efficiency, identify ROI, and recommend budget optimizations to maximize overall profitability. "
+    "4. Cross-Functional Collaboration: Partnered with teams from sales, marketing, supply chain, finance, and customer service teams to understand business needs and ensure data solutions aligned with strategic goals. ",
 
     "Ecommerce Sales & Operation Lead at SCI Ecommerce (January 2019 - November 2019, Jakarta, Indonesia). "
     "Overseeing end-to-end e-commerce operations and driving business performance (top & bottom line). ",
+
     "Key Account Manager at Lazada (March 2016 - September 2018, Jakarta, Indonesia). "
-    "Strategized to boost sales, managed client relationships, and evaluated sales performance indicators. "
+    "1. Strategizes to boost sales through thorough business analysis, including sales projections and forecasting. "
+    "2. Manages client relationships, negotiates deals, and regularly evaluates sales performance indicators. "
 ]
 
-OWNER_SPECIALIZATION = ["Data Collection","Data Cleansing","Data Modeling","Data Visualization","Data Analytics","Business Intelligence","Workflow Automation"]
+OWNER_EDUCATION = [
+    "Bachelor's Degree in Industrial Engineering from Telkom University (August 2010 - June 2015, Bandung, Indonesia). "
+]
 
-OWNER_HARD_SKILLS = ["Python",
-                     "Google Looker Studio","Tableau","Power BI","Fine BI",
-                     "BigQuery","PostgreSQL","MySQL",
-                     "Google Cloud Platform (GCP)","Virtual Machines (VMs)","SSH","Remote Server Management",
-                     "Windows","Linux",
-                     "Airflow","Microsoft Power Automate","Cronjobs",
-                     "Excel","Google Sheets",
-                     "REST API (basic knowledge)","Data Engineer (basic knowledge)","Machine Learning (basic knowledge)","Statistic (basic knowledge)"]
+OWNER_LANGUAGES = ["Indonesian (Native)", "English (Proficient)"]
+
+OWNER_HARD_SKILLS = ["Programming Language : Python, R (Basic)",
+                     "Data Visualization : Fine BI, Google Looker Studio, Power BI, Tableau",
+                     "Databases & Data Storage : SQL (BigQuery, MySQL, PostgreSQL), NoSQL (MongoDB)",
+                     "Cloud & Infrastructure : Docker, Google Cloud Platform (GCP), SSH & Remote Server Management, Virtual Machines (VMs)",
+                     "Operating Systems & CLI : Terminal Scripting (Bash, Shell, CMD), Linux, Unix, Windows",
+                     "Productivity & Office Tools : Google Sheets, Microsoft Excel",
+                     "Data Engineering & Workflow Automation : Apache Airflow,APIs (REST, GraphQL),Cronjobs,Microsoft Power Automate, Version Control: Git (GitHub, GitLab, BitBucket)"
+]
 
 OWNER_SOFT_SKILLS = ["Effective Communication", "Critical Thinking", "Problem Solving", "Adaptability", 
                     "Logical Thinking", "Collaboration", "Time Management", "Attention to Detail", 
                     "Decision Making"]
 
-OWNER_LANGUAGES = ["Indonesian", "English"]
+OWNER_CERTIFICATIONS = [
+    "Name: Google Data Analytics, Issuing Organization: Google, Issue Date: January 2025, Credential ID: JU5RPK0II6I6, Credential URL : https://www.coursera.org/account/accomplishments/professional-cert/certificate/JU5RPK0II6I6, Skills: Google Sheets, SQL, Tableau, R",
+    "Name: Data Engineer, Issuing Organization: Digital Skola, Issue Date: May 2022, Credential ID: 22/SC/GRD/DE5/V/2022, Credential URL : https://drive.google.com/file/d/1--SkheDdgs0l56ns0vFpQANB30aILj-F/view?usp=sharing, Skills: Python, SQL, APIs, Linux, Unix, Virtual Machines",
+    "Name: Data Scientist : Machine Learning, Issuing Organization: Rakamin Academy, Issue Date: November 2021, Credential ID: 507DS14112021, Credential URL : https://drive.google.com/file/d/127KgxV_72RNw0VWYhE8nA4CgEjtrU3a4/view?usp=sharing, Skills: Python, Machine Learning, SQL, Statistical Data Analysis",
+]
+
 
 # Add other information based on your needs
 # You can create your own variable as long as it starts with 'OWNER_'
@@ -99,9 +98,9 @@ OWNER_HOBBIES = ["Traveling","Swimming"]
 
 OWNER_CAREER_GOALS = ["Interested in leading a data team within 3-5 years"]
 
-OWNER_DESIRED_ROLE = ["Data Analytst", "Business Intelligence"]
+OWNER_DESIRED_ROLE = ["Data Analytst", "Business Intelligence", "Data Engineer"]
 
-OWNER_DESIRED_INDUSTRIES = ["E-commerce", "Technology", "Cryptocurrency", "Financial"]
+OWNER_DESIRED_INDUSTRIES_OR_INDUSTRY_EXPOSURE = ["AI Native", "Cryptocurrency", "Financial", "Technology", "BI Service / Data Solution"]
 
 OWNER_AVAILABILITY = "Available to start after a 1-month notice period"
 
@@ -117,15 +116,11 @@ OWNER_WORK_STYLE = "Analytical, detail-oriented, and collaborative, with a focus
 
 OWNER_CORE_VALUES = ["Continuous Learning", "Integrity", "Customer-Centricity", "Innovation"]
 
-OWNER_GITHUB = "https://github.com/anggoletomi"
-
 OWNER_BENEFITS_IMPORTANCE = ["health coverage", "professional development budget", "flexible hours", "laptop budget support", "work remotely"]
 
 OWNER_LEADERSHIP_STYLE = "Lead by example, encourage open communication, and foster a culture of continuous improvement."
 
 OWNER_PROBLEM_SOLVING_APPROACH = "Understand context, break down problems, collaborate with stakeholders, iteratively refine solutions."
-
-OWNER_INDUSTRY_EXPOSURE = ["E-commerce", "Retail", "Logistics", "Financial"]
 
 OWNER_COMMUNICATION_STYLE = "Convey technical details in relatable stories and visuals, adjusting language based on the audience."
 
