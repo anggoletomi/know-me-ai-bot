@@ -53,10 +53,6 @@ OWNER_HARD_SKILLS = ["Programming & Scripting: Python, R",
                      "Data Engineering & Workflow Automation: Apache Airflow, Apache Hadoop, Apache Hive, APIs (REST, GraphQL), CI/CD Tools: GitHub Actions, Cronjobs, dbt, Microsoft Power Automate, Version Control: Git (GitHub, GitLab, BitBucket)"
                     ]
 
-OWNER_SOFT_SKILLS = ["Effective Communication", "Critical Thinking", "Problem Solving", "Adaptability", 
-                    "Logical Thinking", "Collaboration", "Time Management", "Attention to Detail", 
-                    "Decision Making"]
-
 OWNER_EXPERIENCE = [
     "Business Intelligence Engineer at SCI Ecommerce (December 2019 - October 2024, Jakarta, Indonesia): "
     "1. Designed and delivered 5+ interactive dashboards and reports for sales, marketing, supply chain, finance, and customer service teams, impacting stakeholders across the SEA region. "
@@ -94,10 +90,30 @@ OWNER_PROJECT_PORTFOLIO = ["For a complete list of my projects, please visit my 
 # You can create your own variable as long as it starts with 'OWNER_'
 # Important: Fill the variables only with strings or lists.
 # Example:
-# OWNER_HOBBIES = ["Reading", "Traveling", "Gaming"]
+# OWNER_HOBBIES = ["Traveling","Swimming","Reading"]
 # Add as many variables as you want to make the assistant more personalized!
 
-OWNER_HOBBIES = ["Traveling","Swimming"]
+OWNER_WORK_ETHIC = ["I respect time and commitments.",
+                    "I deliver high-quality work.",
+                    "I am someone you can count on, and I make myself available when needed.",
+                    "I am honest about mistakes and take responsibility for correcting them without shifting blame.", 
+                    "I take ownership of tasks and outcomes, ensuring I follow through on my commitments.", 
+                    "I put in the effort to exceed expectations.",
+                    "I learn new skills to enhance my performance.",
+                    "I adjust to changes in project requirements and quickly learn new tools to ensure success.",
+                    "I pay close attention to detail by double-checking data for errors and revising reports to ensure accuracy before submission.",
+                    "I figure out how to use new software tools on my own by reading documentation and watching tutorials, rather than waiting for formal training.",
+                    "I continue troubleshooting complex technical issues until I find a solution, demonstrating determination and commitment to excellence.",
+                    "I take courses to enhance my skills.",
+                    "I prioritize tasks by importance and urgency, completing critical reports first before responding to routine emails.",
+                    "I acknowledge when I don't know the answer and commit to finding out and following up promptly.",
+                    "I go above and beyond minimum requirements.",
+                    "I identify the root cause of recurring issue and implement permanent fixes rather than relying on temporary workarounds.",
+                    "I take full accountability for mistakes and immediately work to correct them, ensuring they don't happen again.",
+                    "I maintain a mindset of constant improvement, always seeking new and better ways to do things rather than settling for the status quo.",
+                    "I manage my responsibilities independently, stay motivated, and uphold high performance standards even without direct supervision."]
+
+OWNER_HOBBIES = ["Traveling","Swimming","Reading"]
 
 OWNER_CAREER_GOALS = ["Interested in leading a data team within 3-5 years"]
 
@@ -115,29 +131,14 @@ OWNER_REMOTE_PREFERENCE = "Open to hybrid or fully remote roles"
 
 OWNER_COMPENSATION_EXPECTATION = "Competitive with market standards, open to negotiation based on role and responsibilities"
 
-OWNER_WORK_STYLE = "Analytical, detail-oriented, and collaborative, with a focus on delivering actionable insights"
-
-OWNER_CORE_VALUES = ["Continuous Learning", "Integrity", "Customer-Centricity", "Innovation"]
-
-OWNER_BENEFITS_IMPORTANCE = ["health coverage", "professional development budget", "flexible hours", "laptop budget support", "work remotely"]
-
-OWNER_LEADERSHIP_STYLE = "Lead by example, encourage open communication, and foster a culture of continuous improvement."
-
-OWNER_PROBLEM_SOLVING_APPROACH = "Understand context, break down problems, collaborate with stakeholders, iteratively refine solutions."
-
-OWNER_COMMUNICATION_STYLE = "Convey technical details in relatable stories and visuals, adjusting language based on the audience."
-
-OWNER_TEAM_CULTURE_FIT = "Enjoys diverse, collaborative, and continuous-learning teams that value innovation."
-
 OWNER_CONTRACT_TYPE_PREFERENCE = "Permanent."
 
 OWNER_FULLTIME_PARTTIME = 'Full Time.'
 
-OWNER_EMPLOYER_VALUES = ["Innovation", "Professional Growth", "Ethical Conduct", "Diversity & Inclusion"]
+OWNER_BENEFITS_IMPORTANCE = ["health coverage", "professional development budget", "flexible hours", "laptop budget support", "work remotely"]
 
 OWNER_HR_QUESTIONS_AND_ANSWER = [
     "What are your strengths and weaknesses?|Strengths: I excel at overcoming new challenges and proactively solving problems with efficiency. I am detail-oriented, highly accurate, and well-organized, with strong documentation and communication skills. I take the initiative in breaking down complex problems into actionable steps and always strive for continuous learning. Weaknesses: I tend to take on too much responsibility myself because I want to ensure everything is done precisely. However, I am working on improving my delegation skills and learning to trust others to share responsibilities effectively. I'm not naturally confident in public speaking or presenting ideas to large groups. To address this, I've been practicing by participating in smaller meetings and preparing more thoroughly for presentations. I sometimes feel impatient when progress is slow, especially when I believe a task could be completed more efficiently. However, I've been working on improving my patience by understanding different working styles and focusing on collaboration to maintain a steady pace"
-    "Why do you want to work here?|I want to work here because your company's focus aligns with my passion for leveraging data to drive insights and improve decision-making processes. I also value a collaborative and innovative work culture.",
     "What motivates you in your career?|I am motivated by solving complex problems, learning new skills, and creating impactful solutions that simplify decision-making for businesses.",
     "How do you handle stress or pressure at work?|I manage stress by breaking tasks into smaller steps, prioritizing effectively, and maintaining open communication with my team to ensure alignment.",
     "Can you describe a challenging situation you faced at work and how you handled it?|I struggled with isolation while working in a team spread across different time zones. To address this, I initiated regular updates and used collaboration tools to stay connected and ensure project alignment.",
@@ -149,9 +150,82 @@ OWNER_HR_QUESTIONS_AND_ANSWER = [
     "Describe a time when you worked with a difficult colleague and how you managed it.|I worked with a colleague who was resistant to adopting a new tool. I addressed this by demonstrating the tool's benefits and providing hands-on support to ease the transition.",
     "How do you ensure effective communication in a team?|I ensure effective communication by setting clear expectations, using collaboration tools, and scheduling regular check-ins to stay aligned.",
     "What role do you usually take in a team?|I usually take on the role of a data strategist or problem-solver, ensuring tasks are completed efficiently and with high quality.",
-    "What do you know about our company and its culture?|I know your company values innovation, collaboration, and data-driven decision-making, which aligns with my career goals and values.",
-    "How do your skills and experience align with the requirements of this role?|My skills in BI tools, data visualization, and automation align closely with this role, along with my ability to adapt and learn quickly in new environments.",
-    "Where do you see yourself in five years?|I see myself as a senior data analyst or BI consultant, contributing to impactful projects and mentoring others in the field.",
+    "Where do you see yourself in five years?|I see myself as a head of data team or being a data consultant, contributing to impactful projects and mentoring others in the field.",
     "What are your salary expectations?|My expectation is competitive with market standards for this role and level of expertise, and I am open to negotiation.",
     "Are you open to travel if the job requires it?|I am open to occasional travel if necessary."
 ]
+
+OWNER_SOFT_SKILLS = [
+                    "Analytical Thinking and Problem-Solving",
+                    "Attention to Detail",
+                    "Adaptability to Changing Requirements",
+                    "Proactive and Self-Motivated",
+                    "Effective Time Management and Prioritization",
+                    "Collaboration and Teamwork",
+                    "Strong Written and Verbal Communication Skills",
+                    "Continuous Learning and Self-Improvement",
+                    "Empathy and Patience in Conflict Resolution",
+                    "Mentorship and Knowledge Sharing"
+                    ]
+
+OWNER_CORE_VALUES = [
+                    "Integrity and Honesty",
+                    "Commitment to Excellence",
+                    "Continuous Learning and Growth",
+                    "Accountability and Ownership",
+                    "Respect for Time and Commitments",
+                    "Innovation and Creativity",
+                    "Empowering Others Through Data",
+                    "Data-Driven Decision Making",
+                    "Collaboration and Team Alignment",
+                    "Attention to Detail and Precision"
+                    ]
+
+OWNER_LEADERSHIP_STYLE = [
+                        "Servant Leadership: Focusing on empowering team members to succeed.",
+                        "Data-Driven Leadership: Making informed decisions backed by insights.",
+                        "Collaborative Leadership: Encouraging open dialogue and input from the team.",
+                        "Goal-Oriented Leadership: Setting clear objectives and aligning efforts to achieve them.",
+                        "Empathetic Leadership: Understanding team needs and providing support."
+                        ]
+
+OWNER_PROBLEM_SOLVING_APPROACH = [
+                                "Define and Understand the Problem: Gather all relevant data and context.",
+                                "Break Down Complexity: Simplify challenges into manageable steps.",
+                                "Data-Driven Analysis: Use analytics to identify patterns, trends, and potential solutions.",
+                                "Collaboration: Engage stakeholders to gain insights and diverse perspectives.",
+                                "Iterative Improvement: Implement solutions incrementally and refine based on feedback.",
+                                "Focus on Root Causes: Address underlying issues to prevent recurrence.",
+                                "Documentation and Reflection: Capture learnings to improve future processes."
+                                ]
+
+OWNER_COMMUNICATION_STYLE = [
+                            "Clear and Concise: Avoids ambiguity and ensures clarity in messaging.",
+                            "Collaborative: Promotes open dialogue and encourages feedback.",
+                            "Proactive: Keeps stakeholders informed and aligned throughout projects.",
+                            "Adaptable: Tailors communication style to the audience and context.",
+                            "Transparent: Shares updates and challenges honestly and in a timely manner."
+                            ]
+
+OWNER_TEAM_CULTURE_FIT = [
+                        "Collaborative and Inclusive Teams",
+                        "Commitment to Continuous Improvement",
+                        "Innovation and Forward-Thinking Environment",
+                        "Respectful and Open Communication",
+                        "Focus on Data-Driven Decision Making",
+                        "Empowerment and Knowledge Sharing",
+                        "Accountability and Ownership in Deliverables",
+                        "Supportive and Growth-Oriented Atmosphere"
+                        ]
+
+OWNER_EMPLOYER_VALUES = [
+                        "Invests in Employee Growth and Development",
+                        "Fosters a Culture of Innovation and Learning",
+                        "Respects Work-Life Balance",
+                        "Encourages Transparent and Open Communication",
+                        "Values Data-Driven Decision Making",
+                        "Provides Opportunities for Leadership and Impact",
+                        "Supports Remote and Flexible Work Options",
+                        "Promotes Collaboration and Team Empowerment",
+                        "Recognizes and Rewards Excellence"
+                        ]
