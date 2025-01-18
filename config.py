@@ -23,7 +23,7 @@ OWNER_NICK_NAME = "Anggo"
 # - Strings should be enclosed in quotes " "
 # - Lists should be enclosed in square brackets [ ] with items separated by commas
 
-OWNER_TITLE = "Business Intelligence Engineer, Data Engineer, Analytics Engineer"
+OWNER_TITLE = "Business Intelligence Analyst, Data Analyst"
 
 OWNER_BIO = "Passionate about data, analytics, and intelligent automation"
 
@@ -37,15 +37,19 @@ OWNER_GITHUB = "https://github.com/anggoletomi/"
 
 OWNER_LIVEBOT = "https://know-me-ai-bot.onrender.com/"
 
-OWNER_SUMMARY = ["Business Intelligence Engineer with over 5 years of experience delivering data-driven solutions to optimize business performance. "
-                 "Proven track record of developing scalable ETL pipelines, delivering impactful dashboards and optimizing workflows. "
-                 "Actively exploring emerging AI technologies to deliver data-driven innovation."]
+OWNER_SUMMARY = ["Business Intelligence and Data Analyst with over 5 years of experience turning numbers into clear insights. "
+                 "I enjoy building dashboards that help teams solve real business problems and make decisions faster. "
+                 "I've worked on automating reports and data pipelines to save time and cut costs. "
+                 "My goal is to find the story behind the data and share it in a way everyone can understand. "
+                 "I'm also eager to learn new analytics tools and AI trends to keep delivering fresh ideas. "
+                 "If you need someone who loves digging into data and making an impact, I'd be excited to help. "]
 
-OWNER_SPECIALIZATION = ["Data Pipelines & Orchestration","Data Modeling & Warehousing","Data Visualization & Analytics",
-                        "ETL/ELT","Workflow Automation","Data Quality & Governance","Statistical Analysis","Basic Machine Learning"]
+OWNER_SPECIALIZATION = ["Data Visualization & BI Tools","Analytics & Reporting","SQL & Data Modeling",
+                        "Statistical Analysis","ETL/ELT & Workflow Automation","Data Quality & Governance",
+                        "Basic Machine Learning","Descriptive/Exploratory Data Analysis"]
 
 OWNER_HARD_SKILLS = ["Programming & Scripting: Python, R",
-                     "Data Visualization & BI Tools: Fine BI, Google Looker Studio, Metabase, Power BI, Tableau",
+                     "Data Visualization & BI Tools: FineBI, Google Looker Studio, Metabase, Power BI, Tableau",
                      "Databases & Data Storage : Data Lake (S3, HDFS), Data Warehouse (BigQuery, Redshift, Snowflake), NoSQL (MongoDB), SQL (MySQL, PostgreSQL)",
                      "Cloud & Infrastructure: Amazon Web Services (AWS), Docker, Google Cloud Platform (GCP), SSH & Remote Server Management, Virtual Machines (VMs)",
                      "Operating Systems & CLI: Terminal Scripting (Bash, Shell, CMD), Linux, Windows",
@@ -54,19 +58,28 @@ OWNER_HARD_SKILLS = ["Programming & Scripting: Python, R",
                     ]
 
 OWNER_EXPERIENCE = [
-    "Business Intelligence Engineer at SCI Ecommerce (December 2019 - October 2024, Jakarta, Indonesia): "
-    "1. Designed and delivered 5+ interactive dashboards and reports for sales, marketing, supply chain, finance, and customer service teams, impacting stakeholders across the SEA region. "
-    "2. Automated end-to-end data pipelines to integrate data from 100+ data sources accross multiple e-commerce stores and WMS, reducing manual effort by ~330 hours/month and achieving 98% data accuracy. "
-    "3. Improved reporting efficiency by 47% via optimized ETL processes, enabling faster decision-making. "
-    "4. Conducted advanced analytics to pinpoint bottom-line performance, expense ROI, and inventory replenishment needs, boosting profitability through data-driven insights. "
-    "5. Collaborated with cross-functional teams to align data solutions with strategic and operational goals. ",
+    "Business Intelligence Analyst at SCI Ecommerce (December 2019 - October 2024, Jakarta, Indonesia): "
+    "1. Created and maintained 5+ interactive BI dashboards (sales, marketing, supply chain, finance) for over 100 stakeholders in SEA, helping teams make decisions faster and cutting reporting time by 40%. "
+    "2. Integrated data from various sources with 98% accuracy, saving 330 hours/month by reducing manual work. "
+    "3. Led analytics projects to find cost savings and optimize inventory, lowering holding costs by 10%. "
+    "4. Worked with different teams to set KPIs and design dashboards, ensuring they matched company goals. "
+    "5. Collaborated with cross-functional teams to align data solutions with strategic and operational goals. "
+    "Key Projects: "
+    "Market Basket Analysis: Used the Apriori algorithm to identify frequently purchased product bundles, leading to a 12% increase in average order value. Reduced unsold aging stock by 15% through targeted cross-selling and bundle promotions. "
+    "Sales Trend Analysis: Ran time-series studies that pinpointed best/worst sales hours, boosting flash sale conversion by 25% when applied to peak traffic times. "
+    "Inventory Reports: Built reports that track stock levels, aging products, and near-expired items, plus suggestions for reorder amounts to avoid running out of stock. "
+    "Brand Evaluation: Create a brand evaluation template to negotiate strategic fee models that improve net profit margins. "
+    "Monthly Business Review: Helped the sales team create monthly review report for brand clients. Streamlined the review process, resulting in fewer data discrepancies and faster approvals for next month’s budget. "
+    "Campaign Activity & Ad Performance: Evaluated ROI of campaigns and ads to identify best practices for future events. "
+    "Packaging Efficiency: Found the most suitable packaging based on product type and sales volume, reducing wasted space and costs. "
 
     "Ecommerce Sales & Operation Lead at SCI Ecommerce (January 2019 - November 2019, Jakarta, Indonesia): "
-    "1. Overseeing end-to-end e-commerce operations and driving business performance (top & bottom line). ",
+    "1. Utilized sales data and performance metrics to forecast demand and optimize inventory levels, reducing stockouts and operational costs. "
+    "2. Maintained weekly analytics dashboards to track KPIs, delivering actionable insights to leadership for improved promotional strategies and revenue growth. ",
 
     "Key Account Manager at Lazada (March 2016 - September 2018, Jakarta, Indonesia): "
-    "1. Strategizes to boost sales through thorough business analysis, including sales projections and forecasting. "
-    "2. Manages client relationships, negotiates deals, and regularly evaluates sales performance indicators. "
+    "1. Conducted data-driven sales forecasting and trend analysis to set realistic targets, optimize promotional efforts, and improve account performance. "
+    "2. Regularly reviewed KPIs with clients, translating insights into strategic account expansions and data-informed negotiations. "
 ]
 
 OWNER_CERTIFICATIONS = [
@@ -81,10 +94,10 @@ OWNER_EDUCATION = [
     "Bachelor's Degree in Industrial Engineering from Telkom University (August 2010 - June 2015, Bandung, Indonesia). "
 ]
 
-OWNER_PROJECT_PORTFOLIO = ["For a complete list of my projects, please visit my Github Pages : https://anggoletomi.github.io",
-                           "Latest Project: ",
-                           "1. NASA Space Rock Watch: Developed a near real-time pipeline in Python orchestrated with Docker, Apache Airflow, Hadoop (HDFS, Hive), and PostgreSQL to fetch, store, and analyze NASA’s Near Earth Object API data. Implemented automated email alerts triggered when objects met specific criteria, enabling timely insights into asteroid/comet size, velocity, and close-approach trends for scientific research and public awareness. Git : https://github.com/anggoletomi/nasa_space_rock_watch",
-                           "2. Open Food Facts Data: Build a Python-based data pipeline to ingest and transform Open Food Facts API data using MongoDB, AWS S3, Snowflake, dbt and Metabase for BI dashboards. Orchestrated end-to-end workflows with GitHub Actions, providing actionable insights into product nutritional content and promoting better consumer health awareness. Git : https://github.com/anggoletomi/openfoodfacts_data"]
+OWNER_PROJECT_PORTFOLIO = ["For a complete list of my projects, please visit my Github Pages : https://anggoletomi.github.io"
+                           "1. Generalized Recommendation System: Focused on building a comprehensive recommendation system pipeline. Covering data preprocessing, model training, and performance evaluation. It can be adapted for recommending books, movies, products, and more. Git : https://github.com/anggoletomi/generalized-recommendation-system"
+                           "2. Leveraging Market Basket Analysis: Unearthing Hidden Gems in Sales Data. Kaggle : https://www.kaggle.com/code/anggoletomi/unearthing-hidden-gems-in-your-sales-data"
+                           ]
 
 # Add other information based on your needs
 # You can create your own variable as long as it starts with 'OWNER_'
