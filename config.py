@@ -130,7 +130,7 @@ OWNER_HOBBIES = ["Traveling","Swimming","Reading"]
 
 OWNER_CAREER_GOALS = ["Interested in leading a data team within 3-5 years"]
 
-OWNER_DESIRED_ROLE = ["Business Intelligence Engineer", "Data Engineer", "Analytics Engineer", "Data Analytst"]
+OWNER_DESIRED_ROLE = ["Business Intelligence Analyst", "Data Analytst"]
 
 OWNER_DESIRED_INDUSTRIES_OR_INDUSTRY_EXPOSURE = ["AI Native", "Cryptocurrency", "Financial", "Technology", "BI Service / Data Solution"]
 
