@@ -58,6 +58,14 @@ OWNER_HARD_SKILLS = ["Programming & Scripting: Python, R",
                     ]
 
 OWNER_EXPERIENCE = [
+    "Senior Data Analyst at SALT (February 2025 - Current, Jakarta, Indonesia): "
+    "1. Created dashboards for our client (Telkomsel) using internal BI tools, ensuring accurate queries and efficient loading times for financial, subscriber, sales, traffic, and customer care data. "
+    "2. Developed predictive models for payment fault and churn, providing proactive insights for retention and risk management. "
+    "3. Ensured data accuracy, integrity, consistency, and completeness by developing an alert system to detect and flag any data anomalies. "
+    "4. Built KPI-tracking dashboards and regularly presented performance reports. "
+    "5. Led churn analysis and customer segmentation to drive user retention and targeted marketing strategies, enhancing ARPU (Average Revenue Per User) through data-driven upsell initiatives and tailored bundle offerings. "
+    "6. Conducted marketing campaign evaluations via A/B testing for each new service package, followed by statistical analyses to measure the significance of performance differences. ",
+    
     "Business Intelligence Analyst at SCI Ecommerce (December 2019 - October 2024, Jakarta, Indonesia): "
     "1. Created and maintained 5+ interactive BI dashboards (sales, marketing, supply chain, finance) for over 100 stakeholders in SEA, helping teams make decisions faster and cutting reporting time by 40%. "
     "2. Integrated data from various sources with 98% accuracy, saving 330 hours/month by reducing manual work. "
